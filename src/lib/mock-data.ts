@@ -173,3 +173,5 @@ export const RELATORIOS = [
   { titulo: "Comparativo de períodos", descricao: "Evolução entre ciclos, meses e semestres." },
   { titulo: "Ranking de consultoras", descricao: "Classificação por atingimento de meta." },
 ];
+
+export const CONSULTORA_ATUAL: Consultora = CONSULTORAS[0]!;

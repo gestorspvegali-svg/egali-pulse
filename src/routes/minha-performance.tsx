@@ -10,7 +10,7 @@ import {
 } from "recharts";
 import { AppShell } from "@/components/AppShell";
 import { Bar, GlassCard, Kpi, SectionTitle } from "@/components/ui-kit";
-import { CONSULTORAS, UNIDADE, evolucao, fmt, pct } from "@/lib/mock-data";
+import { CONSULTORA_ATUAL, UNIDADE, evolucao, fmt, pct } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/minha-performance")({
   head: () => ({
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/minha-performance")({
 });
 
 function MinhaPerformance() {
-  const eu = CONSULTORAS[0];
+  const eu = CONSULTORA_ATUAL;
   const p = pct(eu.realizado, eu.meta);
   const faltam = eu.meta - eu.realizado;
   const ptsPorVenda = eu.realizado / eu.vendas;
