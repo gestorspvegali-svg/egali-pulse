@@ -106,7 +106,28 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+
+  /* Egali Vila Mariana — frosted glass design system */
+  --ink: oklch(0.208 0.042 265.755);
+  --brand: oklch(0.546 0.245 262.9);
+  --accent2: oklch(0.715 0.143 215.2);
+  --mint: oklch(0.696 0.17 162.48);
+  --amberx: oklch(0.769 0.188 70.08);
+  --rose: oklch(0.645 0.246 16.439);
+  --glass: oklch(1 0 0 / 55%);
+  --glass-border: oklch(1 0 0 / 60%);
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --gradient-brand: linear-gradient(90deg, var(--brand), var(--accent2));
+  --gradient-app: linear-gradient(
+    135deg,
+    oklch(0.977 0.021 240) 0%,
+    oklch(0.972 0.021 285) 50%,
+    oklch(0.974 0.03 200) 100%
+  );
+  --shadow-glass: 0 1px 2px 0 oklch(0.208 0.042 265.755 / 8%);
 }
+
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
