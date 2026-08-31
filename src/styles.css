@@ -170,7 +170,27 @@
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background: var(--gradient-app);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
   }
 }
+
+@utility glass-panel {
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass);
+  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(24px);
+}
+
+@utility glass-inset {
+  border: 1px solid oklch(1 0 0 / 70%);
+  background-color: oklch(1 0 0 / 65%);
+}
+
+@utility bar-brand {
+  background-image: var(--gradient-brand);
+}
+
