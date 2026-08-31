@@ -10,14 +10,27 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AtualizarResultadosRouteImport } from './routes/atualizar-resultados'
+import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
 import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as MetasRouteImport } from './routes/metas'
 import { Route as MinhaPerformanceRouteImport } from './routes/minha-performance'
+import { Route as RelatoriosRouteImport } from './routes/relatorios'
 import { Route as VendasRouteImport } from './routes/vendas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtualizarResultadosRoute = AtualizarResultadosRouteImport.update({
+  id: '/atualizar-resultados',
+  path: '/atualizar-resultados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfiguracoesRoute = ConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EquipeRoute = EquipeRouteImport.update({
@@ -35,6 +48,11 @@ const MinhaPerformanceRoute = MinhaPerformanceRouteImport.update({
   path: '/minha-performance',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RelatoriosRoute = RelatoriosRouteImport.update({
+  id: '/relatorios',
+  path: '/relatorios',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VendasRoute = VendasRouteImport.update({
   id: '/vendas',
   path: '/vendas',
@@ -43,39 +61,76 @@ const VendasRoute = VendasRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/atualizar-resultados': typeof AtualizarResultadosRoute
+  '/configuracoes': typeof ConfiguracoesRoute
   '/equipe': typeof EquipeRoute
   '/metas': typeof MetasRoute
   '/minha-performance': typeof MinhaPerformanceRoute
+  '/relatorios': typeof RelatoriosRoute
   '/vendas': typeof VendasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/atualizar-resultados': typeof AtualizarResultadosRoute
+  '/configuracoes': typeof ConfiguracoesRoute
   '/equipe': typeof EquipeRoute
   '/metas': typeof MetasRoute
   '/minha-performance': typeof MinhaPerformanceRoute
+  '/relatorios': typeof RelatoriosRoute
   '/vendas': typeof VendasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/atualizar-resultados': typeof AtualizarResultadosRoute
+  '/configuracoes': typeof ConfiguracoesRoute
   '/equipe': typeof EquipeRoute
   '/metas': typeof MetasRoute
   '/minha-performance': typeof MinhaPerformanceRoute
+  '/relatorios': typeof RelatoriosRoute
   '/vendas': typeof VendasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/equipe' | '/metas' | '/minha-performance' | '/vendas'
+  fullPaths:
+    | '/'
+    | '/atualizar-resultados'
+    | '/configuracoes'
+    | '/equipe'
+    | '/metas'
+    | '/minha-performance'
+    | '/relatorios'
+    | '/vendas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/equipe' | '/metas' | '/minha-performance' | '/vendas'
-  id: '__root__' | '/' | '/equipe' | '/metas' | '/minha-performance' | '/vendas'
+  to:
+    | '/'
+    | '/atualizar-resultados'
+    | '/configuracoes'
+    | '/equipe'
+    | '/metas'
+    | '/minha-performance'
+    | '/relatorios'
+    | '/vendas'
+  id:
+    | '__root__'
+    | '/'
+    | '/atualizar-resultados'
+    | '/configuracoes'
+    | '/equipe'
+    | '/metas'
+    | '/minha-performance'
+    | '/relatorios'
+    | '/vendas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AtualizarResultadosRoute: typeof AtualizarResultadosRoute
+  ConfiguracoesRoute: typeof ConfiguracoesRoute
   EquipeRoute: typeof EquipeRoute
   MetasRoute: typeof MetasRoute
   MinhaPerformanceRoute: typeof MinhaPerformanceRoute
+  RelatoriosRoute: typeof RelatoriosRoute
   VendasRoute: typeof VendasRoute
 }
 
@@ -86,6 +141,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atualizar-resultados': {
+      id: '/atualizar-resultados'
+      path: '/atualizar-resultados'
+      fullPath: '/atualizar-resultados'
+      preLoaderRoute: typeof AtualizarResultadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/configuracoes': {
+      id: '/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/configuracoes'
+      preLoaderRoute: typeof ConfiguracoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/equipe': {
@@ -109,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MinhaPerformanceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/relatorios': {
+      id: '/relatorios'
+      path: '/relatorios'
+      fullPath: '/relatorios'
+      preLoaderRoute: typeof RelatoriosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vendas': {
       id: '/vendas'
       path: '/vendas'
@@ -121,9 +197,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AtualizarResultadosRoute: AtualizarResultadosRoute,
+  ConfiguracoesRoute: ConfiguracoesRoute,
   EquipeRoute: EquipeRoute,
   MetasRoute: MetasRoute,
   MinhaPerformanceRoute: MinhaPerformanceRoute,
+  RelatoriosRoute: RelatoriosRoute,
   VendasRoute: VendasRoute,
 }
 export const routeTree = rootRouteImport
